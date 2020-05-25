@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>LIBRARY MANAGEMENT APP</title>
+</head>
+<body>
+<b>CS 631 - DATA MANAGEMENT SYSTEMS DESIGN</b><br>
+PROJECT<br>
+Purpose of this project<br>
+Analyze, design, implement, and document a database system application. You will use the methodology for database development learned in class. The system must be implemented on a DBMS with any language as a host-language for the application (use of Java and accessing the database using JDBC is one possibility.) The system must be menu-driven and include the basic functionality described below.<br>
+<b>The City Library</b><br>
+The following specifications are intended as a guide; they are not the complete specifications. These are intended to be a basis for you to get started in the right direction in designing your system. You as the designer must analyze and decide what other details or features should be specified for your system. Thus, individual group implementations will differ in terms of design and implementation styles. Every group has to mention clearly in its report what other specifications are assumed.<br>
+Data and Functional Requirements<br>
+Consider the operations of a library system in the different neighborhoods of a city. The library has many readers who borrow books from one of its many branches.<br>
+1. The library records information about all documents that are available in its system. Each document is identified by a unique number (DocumentId.) It also has a title, a publisher, a publication date, and can be one of three different types: book, journal volume, or conference proceedings.<br>
+2. For each document type we need to store additional information. For instance, for books we need to record their ISBN, and for conference proceedings we need to record the date and location of the conference, and the proceedings chair. A journal volume has a number and can have several issues (up to 10). A journal issue has a number (1, 2, 3, …) that uniquely identifies the journal issues of the same journal volume. A journal has a single chief editor who usually lasts for many years and supervises many consecutive journal volumes. Chief editors are identified by their ID and their name has to be recorded. Journal issues might have one or more guest editors and a scope that need to be recorded.<br>
+3. Each document has a single publisher and the publisher address is also recorded.<br>
+4. Books have authors. Information about the authors of books is maintained. An author is identified by a number (AuthorId.) The name of each author is also recorded.<br>
+5. The library system contains several branches, which are identified by a number (LibId). We also need to store the name and the location of each branch. Each branch of the library holds a number of copies of a particular document. Each copy of the same document kept by the same library branch is numbered from 1 to n. The total number of copies of each document in the library is needed. We also need to record the position of every copy in a branch. It is encoded by a string of 6 alphanumeric characters (e.g. 001A03 means the third shelve of bookcase A03).<br>
+6. The library system keeps track of all readers who are uniquely identified by ReaderId. Each reader has a name, an address, a phone number and a type ("student", "senior citizen", "staff" etc.) A reader has to be registered in the database before borrowing a document.<br>
+7. Readers have access to the online catalogue of documents and may reserve books by title if they are available. A reserved book has to be picked up before 6 pm; otherwise, the reservation is cancelled. A reader cannot borrow or reserve more than 10 documents.<br>
+8. Borrowing is defined as taking out a copy of a document on one date and time (BDateTime) and returning it a maximum of 20 days later. RDateTime is the date and time on which the copy of the borrowed document is actually returned. (RDateTime is NULL if the document has not yet been returned). Books have to be returned to the branch from which they are borrowed.<br>
+9. The same copy of a document can be reserved and/or borrowed by the same reader several times.<br>
+10. Documents that are not returned on time are fined at a rate of 20 cents for each day after the due date.<br>
+11. A copy of a document cannot be lent to more than one reader at a time, but a reader can borrow multiple copies of documents.<br>
+Your task is to design the database and application programs that will help manage the document inventory and the day-to-day processing. Note that many functions are left out in order to reduce the size and the complexity of the project.
+There are a number of processes that are relevant:
+_________________
+[Query] This process allows library employees and readers to query the database with regard to documents. It also allows library employees to retrieve information about the readers and the documents they have borrowed.
+[UpdateReader] This process modifies the database appropriately regarding new reader registration and old reader registration cancellation.
+[UpdateDoc] This process modifies the database appropriately regarding new document copies obtained by the different branches of the library and old documents that are being lost, destroyed or donated.
+[BorrowDoc] This process modifies the database appropriately, regarding the documents being borrowed. It is typically the operation done when a reader borrows a document.
+[ReturnDoc] This process modifies the database appropriately regarding the documents being returned. It is typically the operation done when a reader returns a document. It also computes the fine to be paid by the reader if the document is delayed.
+[Admin] This process comprises management report features (aggregated information and statistics, popular documents etc.).
+_________________
+You can make further assumptions but: (a) they should not be in contradiction with the assumptions described above, and (b) they have to be clearly stated in your report.
+</body>
+</html>

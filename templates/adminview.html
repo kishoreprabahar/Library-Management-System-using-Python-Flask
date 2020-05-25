@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+   <head>
+   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />    
+   <link rel="stylesheet" href="/static/stylesheets/styles.css?q=1280549780"   type="text/css" media="screen" charset="utf-8" />
+   <title>LIBRARY MANAGEMENT APP</title>
+   </head>
+	
+   <body>
+   <div class="topnav">
+         <a href="home",name="home",id="home">Home</a>
+         <a href="about",name = "about",id = "about">About</a>
+         <a href="contact",name="contact",id = "contact">Contact</a>
+         <a href="logout",name="logout",id = "logout">logout</a>
+      </div>
+    <form id="form_body" action="http://127.0.0.1:5000/Mainpage.html" method="post" id="form1" name="form1",target="_blank">
+      <body>
+         <h1>Welcome to Library DataBase</h1>
+         <form action="http://127.0.0.1:5000/Mainpage.html" method="post" id="form1" name="form1",target="_blank">
+            <table id="admin_table" align = "center">
+             <tr>
+              <td><a href="adddoccopy.html">Add Document Copy</a></td>
+             </tr>
+             <tr>
+              <td><a href="searchdoccopy.html">Search Document Copy</a></td>
+            </tr>
+            <tr>
+              <td><a href="addnewreader.html">Add new Reader</a></td>
+            </tr>
+            <tr>
+              <td><a href="branchinfo.html">Print Branch Information</a></td>
+            </tr>
+            <tr>
+              <td><a href="frequentborrower.html">Top 10 Frequest Borrowers</a></td>
+            </tr>
+            <tr>
+              <td><a href="borrowedbooks.html">Top 10 Borrowed Books</a></td>
+            </tr>
+            <tr>
+              <td><a href="popularbooks.html">Top 10 Most Popular Books</a></td>
+            </tr>
+            <tr>
+              <td><a href="readerfine">Reader Fine Computation</a></td>
+            </tr>
+            <tr>
+              <td><a href="/">Quit</a></td>
+            </tr>
+            </table>
+           </form>
+     </body>
+      {% with messages = get_flashed_messages() %}  
+      {% if messages %}  
+            {% for message in messages %}  
+                 <p>{{ message }}</p>  
+            {% endfor %}  
+      {% endif %}  
+   {% endwith %}  
+   </body>
+	
+</html>
